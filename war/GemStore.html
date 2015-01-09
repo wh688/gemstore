@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="gemStore">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link type="text/css" rel="stylesheet" href="GemStore.css">
@@ -9,8 +9,14 @@
     <title>Web Application Starter Project</title>
     <script type="text/javascript" language="javascript" src="gemstore/gemstore.nocache.js"></script>
   </head>
-  <body>
-    <h1>{{"Hello, " + "Angular!"}}</h1>
-    <p></p>
+  <body ng-controller="StoreController as store">
+    <div class="list-group">
+      <div class="list-group-item">        
+        <h3>
+          {{store.product.name}}
+          <em class="pull-right">{{store.product.price}}</em>
+        </h3>
+      </div>
+    </div>
   </body>
 </html>
