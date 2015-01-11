@@ -1,7 +1,26 @@
 (function(){
   var app = angular.module('gemStore', []);
+  app.controller('GalleryController', function(){
+    this.current = 0;
+    this.setCurrent = function(newCurrent){
+      if(newCurrent === null){
+        this.current=0;
+      } else{
+      	this.current=newCurrent;
+    	}
+    };
+  });
 	app.controller('StoreController', function(){
    this.products = gems; 
+  });
+  app.controller('TabController', function(){
+    this.tab = 1;
+    this.setTab = function(newTab) {
+      this.tab = newTab;
+    };
+    this.isSet = function(tabName) {
+      return this.tab === tabName;
+    };
   });
   var gems = [{
       name: 'Azurite',
